@@ -7,8 +7,8 @@ NAME=selenium
 JAVA=/usr/bin/java
 
 # arguments to pass to java
-#JAVA_ARGS="-Xmx256m"
-JAVA_ARGS="-Dhttp.proxyHost=10.208.124.43 -Dhttp.proxyPort=8888 -Dhttp.nonProxyHosts=\"*.local\""
+JAVA_ARGS="-Xmx256m"
+#JAVA_ARGS="-Dhttp.proxyHost=<PROXY-IP> -Dhttp.proxyPort=8888 -Dhttp.nonProxyHosts=\"*.local\""
 
 PIDFILE=/var/run/selenium/selenium.pid
 
