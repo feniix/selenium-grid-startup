@@ -3,7 +3,7 @@
 # debian-compatible selenium grid startup script.
 # Sebastian Otaegui <feniix@gmail.com>
 # based on:
-# debian-compatible jenkins startup script.
+# debian-compatible selenium grid startup script.
 # Amelia A Lewis <alewis@ibco.com>
 #
 ### BEGIN INIT INFO
@@ -13,7 +13,7 @@
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
 # Short-Description: Start selenium grid at boot time
-# Description:       Controls the jenkins continuous integration engine.
+# Description:       Controls the selenium grid server.
 ### END INIT INFO
 
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
@@ -24,7 +24,6 @@ SCRIPTNAME=/etc/init.d/$NAME
 
 [ -r /etc/default/$NAME ] && . /etc/default/$NAME
 
-#DAEMON=$JENKINS_SH
 DAEMON=/usr/bin/daemon
 DAEMON_ARGS="--name=$NAME --inherit --stdout=$SELENIUM_LOG --output=$SELENIUM_LOG --pidfile=$PIDFILE" 
 
@@ -85,7 +84,7 @@ check_tcp_port() {
 #
 do_start()
 {
-    # the default location is /var/run/jenkins/jenkins.pid but the parent directory needs to be created
+    # the default location is /var/run/selenium/selenium.pid but the parent directory needs to be created
     mkdir `dirname $PIDFILE` > /dev/null 2>&1 || true
     chown $SELENIUM_USER `dirname $PIDFILE`
     # Return
@@ -94,11 +93,11 @@ do_start()
     #   2 if daemon could not be started
     $DAEMON $DAEMON_ARGS --running && return 1
 
-    # Verify that the jenkins port is not already in use, winstone does not exit
+    # Verify that the selenium grid port is not already in use, winstone does not exit
     # even for BindException
     check_tcp_port "http" "$HTTP_PORT" "4444" || return 1
     
-    # If the var MAXOPENFILES is enabled in /etc/default/jenkins then set the max open files to the 
+    # If the var MAXOPENFILES is enabled in /etc/default/selenium then set the max open files to the 
     # proper value
     if [ -n "$MAXOPENFILES" ]; then
         [ "$VERBOSE" != no ] && echo Setting up max open files limit to $MAXOPENFILES
@@ -112,7 +111,7 @@ do_start()
 
 
 #
-# Verify that all jenkins processes have been shutdown
+# Verify that all selenium grid processes have been shutdown
 # and if not, then do killall for them
 # 
 get_running() 
@@ -223,7 +222,7 @@ case "$1" in
 		  fi
 
 	      else 
-		  echo "$procs instances of jenkins are running at the moment"
+		  echo "$procs instances of selenium grid are running at the moment"
 		  echo "but the pidfile $PIDFILE is missing"
 	      fi
 	      ;;
