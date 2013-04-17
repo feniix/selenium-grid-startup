@@ -1,5 +1,5 @@
-Selenium startup script
-=======================
+Selenium startup script (NOW UPDATED FOR SELENIUM 2.X)
+======================================================
 
 This is a simple startup script based on the jenkins startup script.
 
