@@ -31,7 +31,7 @@ Install the selenium server 2.x in your home directory:
 
 Create a symlink:
 
-    cd /var/log/selenium
+    cd /var/lib/selenium
     ln -s selenium-server-standalone-2.32.0.jar selenium-server-standalone.jar
     
 Create a default grid.yml configuration:
