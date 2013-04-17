@@ -36,12 +36,12 @@ Create a symlink:
     
 Create a default grid.yml configuration:
 
-    sudo cp /local/repo/path/[grid.yml](https://raw.github.com/feniix/selenium-grid-startup/selenium2/grid.yml) /var/lib/selenium/
+    sudo cp /local/repo/path/grid.yml /var/lib/selenium/
     
 Copy the default file and the init.d file in the right locations:
 
-    sudo cp /local/repo/path/etc/init.d/[selenium](https://raw.github.com/feniix/selenium-grid-startup/selenium2/etc/init.d/selenium) /etc/init.d/
-    sudo cp /local/repo/path/etc/default/[selenium](https://raw.github.com/feniix/selenium-grid-startup/selenium2/etc/init.d/selenium) /etc/default/
+    sudo cp /local/repo/path/etc/init.d/selenium /etc/init.d/
+    sudo cp /local/repo/path/etc/default/selenium /etc/default/
    
 Install the service startup:
 
@@ -56,4 +56,8 @@ Check the logs:
     sudo tail -f /var/log/selenium/selenium.log
     
 The service configuration can be found in `/etc/default/selenium`
+
+
+
+
 
