@@ -1,5 +1,5 @@
-Selenium grid startup script
-============================
+Selenium startup script
+=======================
 
 This is a simple startup script based on the jenkins startup script.
 
@@ -19,6 +19,7 @@ selenium installation directory: /var/lib/selenium
     sudo groupadd -r selenium
     sudo useradd -r -d /var/lib/selenium -s /bin/bash -m -g selenium -G selenium selenium
 
+
 log dir: /var/log/selenium owned by the selenium id
 
     sudo mkdir /var/log/selenium
@@ -29,32 +30,39 @@ Install the selenium server 2.x in your home directory:
 
     sudo wget --no-check-certificate https://selenium.googlecode.com/files/selenium-server-standalone-2.32.0.jar -O /var/lib/selenium/selenium-server-standalone-2.32.0.jar
 
+
 Create a symlink:
 
     cd /var/lib/selenium
     sudo ln -s selenium-server-standalone-2.32.0.jar selenium-server-standalone.jar
     
+
 Create a default grid.yml configuration:
 
     sudo cp /local/repo/path/grid.yml /var/lib/selenium/
     
+
 Copy the default file and the init.d file in the right locations:
 
     sudo cp /local/repo/path/etc/init.d/selenium /etc/init.d/
     sudo cp /local/repo/path/etc/default/selenium /etc/default/
    
+
 Install the service startup:
 
     sudo update-rc.d selenium defaults
    
+
 Start the selenium hub:
 
     sudo /etc/init.d/selenium start
     
+
 Check the logs:
 
     sudo tail -f /var/log/selenium/selenium.log
     
+
 The service configuration can be found in `/etc/default/selenium`
 
 
