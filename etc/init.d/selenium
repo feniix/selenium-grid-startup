@@ -95,7 +95,7 @@ do_start()
 
     # Verify that the selenium grid port is not already in use, winstone does not exit
     # even for BindException
-    check_tcp_port "http" "$HTTP_PORT" "4444" || return 1
+    check_tcp_port "http" "$HTTP_PORT" "$SELENIUM_PORT" || return 1
     
     # If the var MAXOPENFILES is enabled in /etc/default/selenium then set the max open files to the 
     # proper value
