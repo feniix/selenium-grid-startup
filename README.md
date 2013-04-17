@@ -32,6 +32,28 @@ Install the selenium server 2.x in your home directory:
 Create a symlink:
 
     cd /var/lib/selenium
-    ln -s selenium-server-standalone-2.32.0.jar selenium-server-standalone.jar
+    sudo ln -s selenium-server-standalone-2.32.0.jar selenium-server-standalone.jar
     
 Create a default grid.yml configuration:
+
+    sudo cp /local/repo/path/[grid.yml](https://raw.github.com/feniix/selenium-grid-startup/selenium2/grid.yml) /var/lib/selenium/
+    
+Copy the default file and the init.d file in the right locations:
+
+    sudo cp /local/repo/path/etc/init.d/[selenium](https://raw.github.com/feniix/selenium-grid-startup/selenium2/etc/init.d/selenium) /etc/init.d/
+    sudo cp /local/repo/path/etc/default/[selenium](https://raw.github.com/feniix/selenium-grid-startup/selenium2/etc/init.d/selenium) /etc/default/
+   
+Install the service startup:
+
+    sudo update-rc.d selenium defaults
+   
+Start the selenium hub:
+
+    sudo /etc/init.d/selenium start
+    
+Check the logs:
+
+    sudo tail -f /var/log/selenium/selenium.log
+    
+The service configuration can be found in `/etc/default/selenium`
+
