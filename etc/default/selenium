@@ -30,4 +30,4 @@ SELENIUM_PORT=5555
 #   descriptors are forced to 1024 regardless of /etc/security/limits.conf
 MAXOPENFILES=8192
 
-SELENIUM_ARGS="-jar ${SELENIUM_HOME}/selenium-server-standalone.jar -role hub  -grid1Yml -port ${SELENIUM_PORT} ${SELENIUM_HOME}/grid.yml"
+SELENIUM_ARGS="-jar ${SELENIUM_HOME}/selenium-server-standalone.jar -role hub  -grid1Yml ${SELENIUM_HOME}/grid.yml -port ${SELENIUM_PORT}"
