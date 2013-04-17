@@ -10,14 +10,16 @@ also assumes you have the pkg daemon installed
 and the following already created in your linux box:
 
 id: selenium
-
-home: /var/lib/selenium-grid
-
+home: /var/lib/selenium
 shell: /bin/bash
+selenium installation directory: /var/lib/selenium
 
-selenium grid installation: /var/lib/selenium-grid/selenium-grid-1.0.8
+    sudo groupadd -r selenium
+    sudo useradd -r -d /var/lib/selenium -s /bin/bash -m -g selenium -G selenium selenium
 
 log dir: /var/log/selenium owned by the selenium id
 
-run: /var/run/selenium owned by the selenium id
+    sudo mkdir /var/log/selenium
+    sudo chown selenium.selenium /var/log/selenium
+
 
