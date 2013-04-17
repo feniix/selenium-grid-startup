@@ -1,0 +1,13 @@
+    hub:
+        port: 5555
+        newSessionMaxWaitTimeInSeconds: 0
+        remoteControlPollingIntervalInSeconds: 180
+        sessionMaxIdleTimeInSeconds: 600
+        # ...
+        environments:
+           - name:    "Firefox"
+             browser: "*firefox"
+           - name:    "IE9 on Windows"
+             browser: "*iehta"
+           - name:    "Firefoxclau"
+             browser: "*firefox"
