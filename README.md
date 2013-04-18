@@ -3,7 +3,7 @@ Selenium startup script (NOW UPDATED FOR SELENIUM 2.X)
 
 This is a simple startup script based on the jenkins startup script.
 
-This startup script assumes you have selenium server 2.x installed in the dir `/var/log/selenium`
+This startup script assumes you have selenium server 2.x installed in the dir `/var/lib/selenium`
 also assumes you have the pkg `daemon` installed and a java runtime installed (this was tested in ubuntu 10.04.4 with `openjdk-6-jdk`)
 
 and the following already created in your linux box:
