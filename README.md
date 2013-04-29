@@ -46,7 +46,10 @@ Copy the default file and the init.d file in the right locations:
 
     sudo cp /local/repo/path/etc/init.d/selenium /etc/init.d/
     sudo cp /local/repo/path/etc/default/selenium /etc/default/
-   
+    
+Make sure the init.d script is executable:
+
+    sudo chmod +x /etc/init.d/selenium   
 
 Install the service startup:
 
